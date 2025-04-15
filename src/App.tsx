@@ -71,9 +71,11 @@ function App() {
             ? 'linear-gradient(135deg, #121212 0%, #1E1E1E 100%)'
             : 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
           py: 4,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="md" sx={{ flex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,6 +136,20 @@ function App() {
             {activeTab === 1 && <PasswordAnalyzer />}
           </motion.div>
         </Container>
+
+        <Box sx={{ textAlign: 'center', mt: 'auto', py: 2 }}>
+          <Typography 
+            variant="caption" 
+            sx={{ 
+              color: 'text.secondary',
+              opacity: 0.7,
+              fontSize: '0.8rem',
+              letterSpacing: '0.5px'
+            }}
+          >
+            Powered by Dynamic.IO
+          </Typography>
+        </Box>
       </Box>
     </ThemeProvider>
   );
